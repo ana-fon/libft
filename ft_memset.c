@@ -6,7 +6,7 @@
 /*   By: anisabel <anisabel@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 18:06:04 by anisabel          #+#    #+#             */
-/*   Updated: 2025/04/10 21:46:44 by anisabel         ###   ########.fr       */
+/*   Updated: 2025/04/12 15:01:27 by anisabel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 void	*memset(void *b, int c, size_t len)
 {
 	unsigned char	*tmp;
-	
-	tmp = (unsigned char *) b;
 
+	tmp = (unsigned char *) b;
 	while (len > 0)
 	{
 		*tmp = (unsigned char) c;
-		len--; 
+		len--;
 		*tmp++;
 	}
 	return (b);
