@@ -6,13 +6,13 @@
 /*   By: anisabel <anisabel@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 18:06:04 by anisabel          #+#    #+#             */
-/*   Updated: 2025/04/12 15:01:27 by anisabel         ###   ########.fr       */
+/*   Updated: 2025/04/18 19:57:09 by anisabel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*tmp;
 
@@ -21,7 +21,7 @@ void	*memset(void *b, int c, size_t len)
 	{
 		*tmp = (unsigned char) c;
 		len--;
-		*tmp++;
+		tmp++;
 	}
 	return (b);
 }

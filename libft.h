@@ -6,7 +6,7 @@
 /*   By: anisabel <anisabel@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 15:51:05 by anisabel          #+#    #+#             */
-/*   Updated: 2025/04/17 10:58:10 by anisabel         ###   ########.fr       */
+/*   Updated: 2025/04/18 16:54:19 by anisabel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,5 @@ char	*ft_substr(const char *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 
 int		ft_toupper(int c);
-
 
 #endif

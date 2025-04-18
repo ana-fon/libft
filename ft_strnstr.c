@@ -12,33 +12,30 @@
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
 	i = 0;
 	j = 0;
-	if (!needle || needle [0] == '\0')
-		return ((char *) haystack);
-	while (haystack[i] && i < len)
+	if (!little || little [0] == '\0')
+		return ((char *) big);
+	while (big[i] && i < len)
 	{
-		while (haystack[i + j] == needle [j] && haystack[i + j] && i + j < n)
+		while (big[i + j] == little [j] && big[i + j] && i + j < len)
 		{
 			j++;
-			if (needle[j] == '\0')
-				return ((char *) haystack + i);
+			if (little[j] == '\0')
+				return ((char *) big + i);
 		}
 		i++;
 		j = 0;
 	}
-	return (o);
+	return (0);
 }
-
-LÊ ISTO PÁ
-
 /*
-o (char *) é importante pois haystack é um const char*, ou seja o conteúdo de haystack não
+o (char *) é importante pois big é um const char*, ou seja o conteúdo de big não
 pode ser alterado. No entanto, fazemos cast para (char *) para o início da substring,
 permitindo assim realizar alterações.
 */

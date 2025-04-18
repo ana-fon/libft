@@ -39,6 +39,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	return (str);
 }
 
+/*
 #include <stdio.h>
 
 int main(void)
@@ -53,3 +54,4 @@ int main(void)
 		printf("Memory allocation failed.\n");
 	return 0;
 }
+*/

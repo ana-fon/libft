@@ -14,25 +14,18 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	len_src;
-	size_t	len_dst;
+	size_t	dst_len;
+	size_t	src_len;
 
-	len_src = ft_strlen(src);
-	len_dst = ft_strlen(dst);
-	if (len_dst >= dstsize)
-		len_dst = dstsize;
-	if (dstsize == len_dst)
-	{
-		return (dstsize + len_src);
-	}
-	if (len_src < dstsize - len_dst)
-	{
-		ft_memcpy(dst + len_dst, src, len_dst + 1);
-	}
-	else
-	{
-		ft_memcpy(dst + len_dst, src, dstsize - len_dst - 1);
-		dst[dstsize - 1] = '\0';
-	}
-	return (dstsize + len_src);
+	src_len = ft_strlen(src);
+	if (!dst && size == 0)
+		return (src_len);
+	dst_len = ft_strlen(dst);
+	if (dst_len >= size)
+		return (src_len + size);
+	size -= dst_len;
+	ft_strlcpy(dst + dst_len, src, size);
+	return (dst_len + src_len);
 }
+
+https://github.com/SirMrPenguin/libft_42/blob/main/ft_strlcat.c

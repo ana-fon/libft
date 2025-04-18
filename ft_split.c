@@ -3,67 +3,86 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anisabel <anisabel@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: joabotel <joabotel@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 10:52:53 by anisabel          #+#    #+#             */
-/*   Updated: 2025/04/17 10:52:53 by anisabel         ###   ########.fr       */
+/*   Created: 2025/04/11 21:00:09 by joabotel          #+#    #+#             */
+/*   Updated: 2025/04/18 18:44:37 by anisabel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	size_t	ft_countwords(char const *s, char c)
+static int	count(char *s, char c)
 {
-	size_t count;
+	int	i;
+	int	count;
 
-	if (!s)
-		return (0);
-	while (*s)
+	i = 0;
+	count = 0;
+	if (s[0] != c && s[0])
+		count++;
+	while (s[i])
 	{
-		while (*s == c)
-			s++;
-		if(*s)
+		if (s[i] == c && s[i + 1] != c && s[i + 1])
 			count++;
-		while (*s != c && *s)
-			s++;
+		i++;
 	}
 	return (count);
 }
 
-
-char	**ft_split(const char *s, char c)
+static void	*bfree(char **arr)
 {
-	char	**res;
-	size_t	word_count;
-	int		i;
-
-	res = malloc((ft_countwords(s,c) + 1) * sizeof(char *));
-	if (!res)
-		return (0);
+	int	i;
 
 	i = 0;
-
-	while (*s)
+	while (arr[i])
 	{
-		while (*s == c && *s)
-			s++;
-		if (!ft_strcchr(s, c))	//verificar se c está no meio da palavra
-			word_len = ft_strlen(s);
-		else
-			word_len = 
+		free(arr[i]);
+		i++;
 	}
+	free(arr);
+	return (NULL);
 }
 
+char	**ft_split(char const *s, char c)
+{
+	char	**arr;
+	size_t	i;
+	int		j;
+	int		n;
 
-/*
-separa uma string num array de palavras
+	i = -1;
+	j = 0;
+	n = -1;
+	arr = malloc((count((char *)s, c) + 1) * sizeof(char *));
+	if (!arr || !s)
+		return (NULL);
+	while (++i <= ft_strlen(s))
+	{
+		if (s[i] != c && n < 0)
+			n = i;
+		else if ((s[i] == c || i == ft_strlen(s)) && n >= 0)
+		{
+			arr[j] = ft_substr(s, n, (i - n));
+			if (!arr[j++])
+				return (bfree(arr));
+			n = -1;
+		}
+	}
+	arr[j] = 0;
+	return (arr);
+}
 
-aloca e retorna um array de strings; resultado de splitting 
-com o caracter c como delimitador
-
-retorna um array de strings 
-
-array of arrays => array of strings => array of words
-
-cada string deve ser NULL temrinated
-*/
+#include <stdio.h>
+int	main(int ac, char **av)
+{
+	(void)ac;
+	int i = 0;
+	char **arr = ft_split(av[1], ' ');
+	while (arr[i])
+	{
+		printf("%s\n", arr[i]);
+		i++;
+	}
+	
+}

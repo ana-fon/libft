@@ -22,8 +22,8 @@ void	*ft_calloc(size_t count, size_t size)
 	if (!tmp)
 		return (NULL);
 	while (i < count * size)
-	tmp[i] = 0;
 	{
+		tmp[i] = 0;
 		i++;
 	}
 	return (tmp);

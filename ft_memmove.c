@@ -32,7 +32,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	else
 	{
-		while (i++ < len)
+		while (++i < len)
 		{
 			temp_dst[i] = temp_src[i];
 		}
