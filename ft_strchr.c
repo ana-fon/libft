@@ -21,7 +21,7 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 	{
-		if (*s == cc)
+		if (s[i] == cc)
 			return ((char *) &s[i]);
 		i++;
 	}
@@ -29,6 +29,5 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *) &s[i]);
 	return (NULL);
 }
-
 
 // segundo check é para o nulo

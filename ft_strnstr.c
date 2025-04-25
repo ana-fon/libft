@@ -18,24 +18,24 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	j;
 
 	i = 0;
-	j = 0;
-	if (!little || little [0] == '\0')
+	if (little [0] == '\0')
 		return ((char *) big);
 	while (big[i] && i < len)
 	{
-		while (big[i + j] == little [j] && big[i + j] && i + j < len)
+		j = 0;
+		while (big[i + j] == little [j] && (i + j) < len)
 		{
 			j++;
 			if (little[j] == '\0')
 				return ((char *) big + i);
 		}
 		i++;
-		j = 0;
 	}
-	return (0);
+	return (NULL);
 }
 /*
 o (char *) é importante pois big é um const char*, ou seja o conteúdo de big não
-pode ser alterado. No entanto, fazemos cast para (char *) para o início da substring,
+pode ser alterado. No entanto, fazemos cast para (char *) 
+para o início da substring,
 permitindo assim realizar alterações.
 */

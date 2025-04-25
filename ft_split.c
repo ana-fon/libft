@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joabotel <joabotel@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: anisabel <anisabel@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 21:00:09 by joabotel          #+#    #+#             */
-/*   Updated: 2025/04/18 18:44:37 by anisabel         ###   ########.fr       */
+/*   Updated: 2025/04/19 15:35:30 by anisabel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	**ft_split(char const *s, char c)
 	arr[j] = 0;
 	return (arr);
 }
-
+/*
 #include <stdio.h>
 int	main(int ac, char **av)
 {
@@ -86,3 +86,4 @@ int	main(int ac, char **av)
 	}
 	
 }
+*/
