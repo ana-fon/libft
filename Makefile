@@ -35,7 +35,7 @@ SRC = 	ft_atoi.c \
 		ft_strnstr.c \
 		ft_strrchr.c \
 		ft_tolower.c \
-		ft_toupper.c
+		ft_toupper.c 
 
 SRC_B =	ft_lstadd_back.c \
 		ft_lstadd_front.c \
@@ -58,7 +58,7 @@ $(NAME): $(OBJS)
 bonus: $(NAME) $(OBJS_B)
 	ar -rcs $(NAME) $(OBJS_B)
 clean:
-	rm -rf $(OBJS)$(OBJS_B) 
+	rm -rf $(OBJS) $(OBJS_B) 
 fclean: clean
 	rm -rf $(NAME)
 re: fclean all

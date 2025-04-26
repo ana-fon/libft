@@ -31,3 +31,12 @@ char	*ft_strchr(const char *s, int c)
 }
 
 // segundo check é para o nulo
+
+/*
+char are automatically promoted to int
+ 
+type casting to char to compare with string
+
+
+ 
+*/
