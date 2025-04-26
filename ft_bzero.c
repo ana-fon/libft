@@ -6,7 +6,7 @@
 /*   By: anisabel <anisabel@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 21:14:46 by anisabel          #+#    #+#             */
-/*   Updated: 2025/04/18 18:29:44 by anisabel         ###   ########.fr       */
+/*   Updated: 2025/04/26 17:50:13 by anisabel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	*tmp;
-
-	tmp = (char *)s;
-	while (n > 0)
-	{
-		*tmp = 0;
-		n--;
-		tmp++;
-	}
+	ft_memset(s, 0, n);
 }
