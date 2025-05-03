@@ -37,6 +37,4 @@ char are automatically promoted to int
  
 type casting to char to compare with string
 
-
- 
 */

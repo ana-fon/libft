@@ -65,6 +65,13 @@ char	*ft_itoa(int n)
 }
 
 /*
+itoa - converte inteiro para string
+
+Uses dynamic memory allocation; the caller must free de memory.
+Return: A pointer to the NULL-terminated string representing the 
+	integer; returns NULL if memory allocation fails.
+*/
+/*
 1. long int para int min e max não serem problema;
 */
 /*
